@@ -16,11 +16,10 @@ import './libraries/TokenRatioSortOrder.sol';
 /// @title Describes NFT token positions
 /// @notice Produces a string containing the data URI for a JSON metadata string
 contract NonfungibleTokenPositionDescriptor is INonfungibleTokenPositionDescriptor {
-    address private constant DAI = 0x6B175474E89094C44Da98b954EedeAC495271d0F;
-    address private constant USDC = 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48;
-    address private constant USDT = 0xdAC17F958D2ee523a2206206994597C13D831ec7;
-    address private constant TBTC = 0x8dAEBADE922dF735c38C80C7eBD708Af50815fAa;
-    address private constant WBTC = 0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599;
+    address private constant DAI = 0x9FD8fa98F0a7D20d7734aa7d0afD396fCD0923B9;
+    address private constant USDC = 0x61759317e2D6Ce05d79F35423b98B27efC15CE34;
+    address private constant USDT = 0x9b80873119412f965428B18B362A583f3e96A5B3;
+    address private constant WBTC = 0xEE660892C8131A56D86751645fD7B514eFa8Df3b;
 
     address public immutable WETH9;
     /// @dev A null-terminated string
@@ -111,8 +110,6 @@ contract NonfungibleTokenPositionDescriptor is INonfungibleTokenPositionDescript
                 return TokenRatioSortOrder.NUMERATOR_MORE;
             } else if (token == DAI) {
                 return TokenRatioSortOrder.NUMERATOR;
-            } else if (token == TBTC) {
-                return TokenRatioSortOrder.DENOMINATOR_MORE;
             } else if (token == WBTC) {
                 return TokenRatioSortOrder.DENOMINATOR_MOST;
             } else {
